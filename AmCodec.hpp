@@ -32,21 +32,21 @@ class AmCodec: public IAmCodec {
 public:
 	AmCodec();
 	virtual ~AmCodec();
-    virtual int init();
-    virtual int close();
-    virtual int reset();
-    virtual int pause();
-    virtual int resume();
-    virtual int write(void* buffer, int len);
-    virtual int checkin_pts(unsigned long pts);
-    virtual int get_vbuf_state(buf_status_t* buf);
-    virtual int get_vdec_state(vdec_status_t* vdec);
+	virtual int init();
+	virtual int close();
+	virtual int reset();
+	virtual int pause();
+	virtual int resume();
+	virtual int write(void* buffer, int len);
+	virtual int checkin_pts(unsigned long pts);
+	virtual int get_vbuf_state(buf_status_t* buf);
+	virtual int get_vdec_state(vdec_status_t* vdec);
 
-    virtual int init_cntl();
-    virtual int poll_cntl();
-    virtual int set_cntl_mode(unsigned int mode);
-    virtual int set_cntl_avthresh(unsigned int avthresh);
-    virtual int set_cntl_syncthresh(unsigned int syncthresh);
+	virtual int init_cntl();
+	virtual int poll_cntl();
+	virtual int set_cntl_mode(unsigned int mode);
+	virtual int set_cntl_avthresh(unsigned int avthresh);
+	virtual int set_cntl_syncthresh(unsigned int syncthresh);
 
 	virtual int getAbufSize() const;
 	virtual void setAbufSize(int abufSize);

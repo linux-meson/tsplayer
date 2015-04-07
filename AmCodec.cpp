@@ -31,7 +31,7 @@ public:
 
  AmCodec::AmCodecPimpl::AmCodecPimpl()
  {
-	 ::memset((void*)&pcodec,0,sizeof(pcodec));
+	::memset((void*)&pcodec,0,sizeof(pcodec));
  }
 
 AmCodec::AmCodec():mp_pimpl(new AmCodec::AmCodecPimpl())
