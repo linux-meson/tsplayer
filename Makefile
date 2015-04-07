@@ -1,12 +1,17 @@
-VERSION = 0.01
+VERSION  = 0.01
 CC      ?= gcc
-CFLAGS  = -Wall -g -DVERSION=\"$(VERSION)\" `pkg-config --cflags libamcodec`
-LDFLAGS = `pkg-config --libs libamcodec --cflags`
+CFLAGS   = -Wall -g -DVERSION=\"$(VERSION)\" `pkg-config --cflags libamcodec`
+LDFLAGS  = `pkg-config --libs libamcodec`
 
-OBJ = tsplayer.o
+OBJ = main.o AmCodec.o IAmCodec.o
 
 prog: $(OBJ)
-	$(CC) $(CFLAGS) -o prog $(OBJ) $(LDFLAGS)
+	$(CXX) $(CFLAGS) -o prog $(OBJ) $(LDFLAGS)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $<
+%.o: %.cpp
+	$(CXX) $(CFLAGS) -c $<
+
+all: prog
+
+clean:
+	rm -f *.o $(OBJ)
