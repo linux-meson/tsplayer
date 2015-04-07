@@ -5,13 +5,13 @@ LDFLAGS  = `pkg-config --libs libamcodec`
 
 OBJ = main.o AmCodec.o IAmCodec.o
 
-prog: $(OBJ)
+tsplayer: $(OBJ)
 	$(CXX) $(CFLAGS) -o prog $(OBJ) $(LDFLAGS)
 
 %.o: %.cpp
 	$(CXX) $(CFLAGS) -c $<
 
-all: prog
+all: tsplayer
 
 clean:
 	rm -f *.o $(OBJ)
